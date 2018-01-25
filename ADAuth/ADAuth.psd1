@@ -79,7 +79,7 @@ CmdletsToExport = ''
 VariablesToExport = ''
 
 # Aliases to export from this module
-AliasesToExport = @('whereami')
+AliasesToExport = ''
 
 # List of all modules packaged with this module
 # ModuleList = @()
