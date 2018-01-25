@@ -7,11 +7,21 @@ function Get-ADGroupMembership {
         )]
         [Alias('UserName','UN')]
         [String]
-        $User
+        $User,
+        [Parameter(
+            Position = 1,
+            Mandatory = $false,
+            ValueFromPipelineByPropertyName = $true
+        )]
+        [switch]$AuthorizationGroups
     )
 
     $DS = Get-DirectoryServicesContext
     $UserObject = [System.DirectoryServices.AccountManagement.UserPrincipal]::FindByIdentity($DS, $User)
-    $Groups = $UserObject.GetAuthorizationGroups()
+    if ($AuthorizationGroups){
+        $Groups = $UserObject.GetAuthorizationGroups()
+    } else {
+        $Groups = $UserObject.GetGroups()
+    }
     $Groups | select -ExpandProperty Name
 }
