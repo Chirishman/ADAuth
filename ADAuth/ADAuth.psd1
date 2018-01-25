@@ -12,7 +12,7 @@
  RootModule = 'ADAuth.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0'
+ModuleVersion = '1.1'
 
 # ID used to uniquely identify this module
 GUID = '5d6fdf1d-af32-4792-bc15-cc871307052b'
@@ -79,7 +79,7 @@ CmdletsToExport = ''
 VariablesToExport = ''
 
 # Aliases to export from this module
-AliasesToExport = @('whereami')
+AliasesToExport = ''
 
 # List of all modules packaged with this module
 # ModuleList = @()
@@ -88,7 +88,35 @@ AliasesToExport = @('whereami')
 # FileList = @()
 
 # Private data to pass to the module specified in RootModule/ModuleToProcess
-# PrivateData = ''
+ 	PrivateData = @{
+
+		PSData = @{
+
+			# Tags applied to this module. These help with module discovery in online galleries.
+			# Tags = @()
+
+			# A URL to the license for this module.
+			# LicenseUri = ''
+
+			# A URL to the main website for this project.
+			# ProjectUri = ''
+
+			# A URL to an icon representing this module.
+			# IconUri = ''
+
+			# ReleaseNotes of this module
+			ReleaseNotes = @'
+1.0
+	Release
+		Initial Release
+1.1
+	Patch
+		Breaking Change - Adds a parameter to select between getting All Groups and Authorization Groups
+'@
+    		ExternalModuleDependencies = @()
+		} # End of PSData hashtable
+	} # End of PrivateData hashtable
+
 
 # HelpInfo URI of this module
 # HelpInfoURI = ''
